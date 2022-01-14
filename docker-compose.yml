@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    user: "1000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TZ=Asia/Tokyo
+    volumes:
+      - .:/home/docker/music-chat-rs
+    working_dir: /home/docker/music-chat-rs
+    tty: true
+    ports:
+      - 8000:8000
